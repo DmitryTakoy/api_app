@@ -7,6 +7,8 @@ from posts.models import Comment, Post, Group, Follow, User
 
 class PostSerializer(serializers.ModelSerializer):
     author = SlugRelatedField(slug_field='username', read_only=True)
+    # редок пишет что в теле ответа не должно быть списка комментов,
+    # изначально с комментами и возвращал
 
     class Meta:
         fields = '__all__'
